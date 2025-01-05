@@ -14,10 +14,12 @@ export default function Home() {
   const getTheJoke = () => {
     if (showSetup) {
       setShowSetup(false);
+      setButtonText('click for a new joke');
     } else {
       getJoke().then((newJoke) => {
         setJoke(newJoke);
         setShowSetup(true);
+        setButtonText('next?')
         console.log(newJoke);
       });
     }
